@@ -1,0 +1,29 @@
+#:import utils kivy.utils
+
+<RecipeScreen>:
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: utils.get_color_from_hex("#2F92C6")
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            pos_hint: {"top": .9, "center_x": .5}
+            size_hint: 1, None
+            height: 80
+            text: "Scrollable Recipe Finder"
+            font_size: 40
+
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            size_hint: 1, .8
+            pos_hint: {"top": .8}
+
+            BoxLayout:
+                id: scroll_box
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height

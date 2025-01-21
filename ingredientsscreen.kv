@@ -1,0 +1,50 @@
+<IngredientsScreen>:
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: utils.get_color_from_hex("#2F92C6")
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            pos_hint: {"top": .95, "left": 1}
+            size_hint: 1, .1
+            text: "Ingredients"
+            font_size: 60
+        TextInput:
+            pos_hint: {"center_x": 0.5, "center_y": 0.8}
+            size_hint: 0.6, 0.1 
+            id: ingredients_text
+            text: ""
+            readonly: True
+        Button:
+            pos_hint: {"center_x": 0.1, "center_y": 0.6} 
+            size_hint: 0.2, 0.12
+            text: "     Add"
+            on_release: root.add_ingredient(add.text)
+            background_normal: ""
+            background_color: utils.get_color_from_hex("#D77A61")
+        TextInput:
+            id: add
+            pos_hint: {"center_x": 0.55, "center_y": 0.6}
+            size_hint: 0.6, 0.12
+            hint_text: "Enter the ingredient to add"
+        Button:
+            pos_hint: {"center_x": 0.1, "center_y": 0.4} 
+            size_hint: 0.2, 0.12
+            text: "   Delete"
+            on_release: root.delete_ingredient(delete.text)
+            background_normal: ""
+            background_color: utils.get_color_from_hex("#D77A61")
+        TextInput:
+            id: delete
+            pos_hint: {"center_x": 0.55, "center_y": 0.4}
+            size_hint: 0.6, 0.12
+            hint_text: "Enter the ingredient to delete"
+        Button:
+            pos_hint: {"center_x": 0.5, "center_y": 0.2} 
+            size_hint: 0.5, 0.12
+            text: "Press to search recipe"
+            on_release: root.search_recipes()
+            background_normal: ""
+            background_color: utils.get_color_from_hex("#D77A61")

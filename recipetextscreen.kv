@@ -1,0 +1,29 @@
+<RecipeTextScreen>:
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: utils.get_color_from_hex("#2F92C6")
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Image:
+            id: recipe_image
+            source: 'downloaded_image.jpg'
+            pos_hint: {"center_x": 0.5, "center_y": 0.9}
+            allow_stretch: True
+            size_hint_y: None
+            height: 700
+        Label:
+            id: recipe_description
+            text: "Recipe description will appear here"
+            pos_hint: {"center_x": 0.5, "center_y": 0.4}
+            size_hint: 1, None
+            height: 200
+            font_size: 25
+        Button:
+            pos_hint: {"center_x": 0.5, "center_y": 0.1} 
+            size_hint: 0.5, 0.12
+            text: "Press to go back to menu"
+            on_release: app.change_screen("home_screen")
+            background_normal: ""
+            background_color: utils.get_color_from_hex("#D77A61")

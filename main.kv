@@ -1,0 +1,29 @@
+#:include homescreen.kv
+#:include settingsscreen.kv
+#:include namescreen.kv
+#:include ingredientsscreen.kv
+#:include recipescreen.kv
+#:include recipetextscreen.kv
+
+GridLayout:
+    cols: 1
+    ScreenManager:
+        id: screen_manager
+        HomeScreen:
+            name: "home_screen"
+            id: home_screen 
+        SettingsScreen:
+            name: "settings_screen"
+            id: settings_screen
+        NameScreen:
+            name: "name_screen"
+            id: name_screen
+        IngredientsScreen:
+            name: "ingredients_screen"
+            id: ingredients_screen
+        RecipeScreen:
+            name: "recipe_screen"
+            id: recipe_screen
+        RecipeTextScreen:
+            name: "recipe_text_screen"
+            id: recipe_text_screen

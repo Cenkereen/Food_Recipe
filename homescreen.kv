@@ -1,0 +1,36 @@
+#:import utils kivy.utils
+
+<HomeScreen>:
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: utils.get_color_from_hex("#2F92C6")
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            pos_hint: {"top": .7, "left": 1}
+            size_hint: 1, -.18
+            text: "Recipe Finder"
+            font_size: 80
+        Button:
+            pos_hint: {"top": .6, "x": 0.25}
+            size_hint: 0.5, 0.12
+            text: "Recipe by ingredients"
+            on_release: app.change_screen("ingredients_screen")
+            background_normal: ""
+            background_color: utils.get_color_from_hex("#E9967A")
+        Button:
+            pos_hint: {"top": .48, "x": 0.25}
+            size_hint: 0.5, 0.12
+            text: "Recipe by name"
+            on_release: app.change_screen("name_screen")
+            background_normal: ""
+            background_color: utils.get_color_from_hex("#D77A61")
+        Button:
+            pos_hint: {"top": .36, "x": 0.25}
+            size_hint: 0.5, 0.12
+            text: "Settings"
+            on_release: app.change_screen("settings_screen")
+            background_normal: ""
+            background_color: utils.get_color_from_hex("#E9967A")
